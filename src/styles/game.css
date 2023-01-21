@@ -197,7 +197,7 @@
 }
 
 .carton {
-  margin: 5px 0;
+  margin: 0 10px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
