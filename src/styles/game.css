@@ -281,25 +281,26 @@
 
 @media screen and (max-width: 1550px) {
   .bingo-cartones {
-    flex-direction: column-reverse;
-    flex-wrap: nowrap;
-    width: fit-content;
-    margin: 0 5%;
+    justify-content: center;
+    align-items: center;
   }
 
+  .carton{
+    margin: 30px;
+  }
   .carton-title {
-    font-size: 26px;
+    font-size: 20px;
   }
 
   .carton-nums {
-    gap: 5px;
+    gap: 2px;
   }
 
   .carton-nums-balota {
-    width: 65px;
-    height: 65px;
-    line-height: 65px;
-    font-size: 28px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 25px;
   }
 
   .selected::after {
