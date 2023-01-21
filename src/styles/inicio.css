@@ -1,0 +1,67 @@
+.bingo-ui-ini{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background: rgba(0, 0, 0, 0.842);
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    z-index: 2;
+    color: #fff;
+}
+
+.bingo-ui-ini>h1{
+    font-family: 'Rowdies', cursive;
+    width: 100%;
+    font-size: 150px;
+    text-align: center;
+    margin: 0;
+    animation: tilin linear 0.5s infinite alternate;
+}
+
+@keyframes tilin {
+    from{
+        text-shadow: 1px 1px 1px white;
+    }
+
+    to{
+        text-shadow: 1px 1px 10px white;
+    }
+}
+
+.bingo-ui-ini>h1:hover{
+    text-shadow: 1px 1px 11px white;
+}
+
+.bingo-ui-ini>a{
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    margin:10px 40%;
+    padding: 5px 10px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px white;
+    font-size: 2rem;
+    font-weight: 300;
+    font-family: 'Rowdies', cursive;
+}
+
+.bingo-ui-ini>a:hover{
+    color: white;
+    background: black;
+}
+
+.bingo-ui-ini>a:active{
+    scale: 0.9;
+}
+
+
+@media screen and (max-width: 710px) {
+    .bingo-ui-ini>h1{
+        margin: 10px 0;
+    }
+}

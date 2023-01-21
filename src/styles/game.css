@@ -1,0 +1,332 @@
+.bingo-ui-gm {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.877);
+  width: 90vw;
+  height: 90vh;
+  margin: 5vh 5vw;
+  top: 0;
+  display: flex;
+}
+
+.gameover{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: black;
+  width: 90vw;
+  height: 90vh;
+  z-index: 3;
+  color:white
+}
+
+.gameover>h1{
+  font-size: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+.gameover>p{
+  font-size: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.gameover>div{
+  width: 100%;
+  text-align: center;
+}
+
+.gameover>a{
+  text-decoration: none;
+  border: none;
+  color: black;
+  margin: 0 25px;
+  padding: 5px;
+  background: white;
+  box-shadow: 1px 1px 10px white;
+  font-size: 2rem;
+  font-weight: 300;
+  border-radius: 5px;
+  font-family: "Rowdies", cursive;
+  transition: all 0.3 ease;
+}
+
+.game-container {
+  display: flex;
+  height: 100%;
+  width: 300px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.game-container > h1 {
+  color: white;
+  text-align: center;
+}
+
+.bingo-ui-gm-balotas {
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.balota {
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  background: white;
+  text-align: center;
+  border: 1px solid black;
+  box-sizing: border-box;
+  border-radius: 50%;
+  margin: 0 2px;
+}
+
+.on {
+  background: yellow;
+}
+
+.game-container > button {
+  border: none;
+  color: black;
+  margin: 0 5%;
+  background: white;
+  box-shadow: 1px 1px 10px white;
+  font-size: 2rem;
+  font-weight: 300;
+  border-radius: 5px;
+  font-family: "Rowdies", cursive;
+  margin: 10px 0;
+  transition: all 0.3 ease;
+}
+
+.game-container > button:hover {
+  color: white;
+  background: black;
+  cursor: pointer;
+}
+
+.game-container > button:active {
+  transform: scale(0.95);
+}
+
+.newBalota-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100px;
+  background: white;
+  height: fit-content;
+  color: black;
+  padding: 20px 0;
+}
+
+.newBalota-container > h2 {
+  text-align: center;
+  font-weight: 300;
+}
+
+.newBalota-idlet {
+  width: 80px;
+  height: 80px;
+  font-size: 30px;
+  font-weight: 300;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 80px;
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  transition: all 0.3s ease;
+  box-shadow: -5px 5px 10px black;
+}
+
+.newBalota-text {
+  color: white;
+  -webkit-text-stroke: 2px black;
+}
+
+.bingo-win{
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  border: none;
+  margin: 0 5%;
+  padding: 10px;
+  background: white;
+  color:black;
+  box-shadow: 1px 1px 10px white;
+  font-size: 2rem;
+  font-weight: 300;
+  border-radius: 5px;
+  font-family: "Rowdies", cursive;
+  height: fit-content;
+  transition: all 0.3 ease;
+  position: absolute;
+  top: 0px;
+  left: -80px;
+}
+
+.bingo-win:hover {
+  color: white;
+  background: black;
+  cursor: pointer;
+}
+
+.bingo-win:active{
+  scale: 0.95;
+}
+
+.bingo-cartones {
+  display: flex;
+  justify-content: space-evenly;
+  color: white;
+  margin: 0 auto;
+  width: 70rem;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  height: 100%;
+}
+
+.carton {
+  margin: 5% 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.carton-title {
+  font-size: 40px;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.carton-nums {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+  padding: 5px;
+  flex-wrap: wrap;
+  border: 2px white solid;
+}
+
+.carton-nums-balota {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  background: white;
+  border-radius: 50%;
+  color: black;
+  text-align: center;
+  place-self: center;
+  font-size: 40px;
+  user-select: none;
+}
+
+.carton-nums-balota:hover {
+  cursor: pointer;
+}
+
+.selected::after {
+  content: "a";
+  text-align: center;
+  color: transparent;
+  position: absolute;
+  top: 7.5px;
+  left: 7.5px;
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  border-radius: 50%;
+  background: #000;
+  transition: all 0.5s ease;
+  animation: apar 0.5s linear alternate;
+}
+
+.rival::after{
+  content: 'a';
+  color: transparent;
+  position: absolute;
+  background: transparent;
+  width: 380px;
+  height: 400px;
+}
+
+@keyframes apar {
+  from {
+    width: 0px;
+    height: 0px;
+    top: 35px;
+    left: 35px;
+  }
+  to {
+    width: 55px;
+    height: 55px;
+    top: 7.5px;
+    left: 7.5px;
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .bingo-cartones {
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    width: fit-content;
+    margin: 0 5%;
+  }
+
+  .carton-title {
+    font-size: 26px;
+  }
+
+  .carton-nums {
+    gap: 5px;
+  }
+
+  .carton-nums-balota {
+    width: 65px;
+    height: 65px;
+    line-height: 65px;
+    font-size: 28px;
+  }
+
+  .selected::after {
+    content: "a";
+    text-align: center;
+    color: transparent;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 55px;
+    height: 55px;
+    line-height: 40px;
+    border-radius: 50%;
+    background: #000;
+    transition: all 0.5s ease;
+    animation: apar2 0.5s linear alternate;
+  }
+
+  @keyframes apar2 {
+    from {
+      width: 0px;
+      height: 0px;
+      top: 32.5px;
+      left: 32.5px;
+    }
+    to {
+      width: 55px;
+      height: 55px;
+      top: 5px;
+      left: 5px;
+    }
+  }
+}
