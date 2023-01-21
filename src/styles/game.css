@@ -402,3 +402,8 @@
     left: -80px;
   }
 }
+
+.toast{
+  background: rgb(180, 0, 0);
+  color: white;
+}

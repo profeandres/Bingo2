@@ -3,25 +3,20 @@ import dbJson from "../db/bingo.json";
 import "../styles/game.css";
 import { nuevoCarton } from "../helpers/nuevoCarton";
 import { NumBalota } from "../components/NumBalota";
+import { toast, Toaster } from "react-hot-toast";
 
 const Game = () => {
   const [con, setCon] = useState(0);
-  // const [auto, setAuto] = useState(false);
   const [bal, setBal] = useState(null);
   const [jugador, setJugador] = useState(null);
   const [rival, setRival] = useState(null);
   const [gameOver, setGameOver] = useState(false);
   const [win, setWin] = useState(false);
-
-  // const handleSelect = () => {
-  //   if (select) {
-  //     setSelect(false);
-  //   } else {
-  //     setSelect(true);
-  //   }
-  // };
+  const [winRival, setWinRival] = useState(false)
+  const [empate, setEmpate] = useState(false)
 
   const bingo = () => {
+    if(winRival) return
     for (let i = 0; i < jugador.length; i++) {
       console.log(jugador[i]);
       if (!jugador[i].select) {
@@ -41,6 +36,7 @@ const Game = () => {
   const handleBalota = () => {
     let id = 0;
     if (con === 75) return;
+    if(winRival) return;
     while (id === 0 || id > 75 || db.balotas[id - 1].out) {
       id = Math.floor(Math.random() * 75) + 1;
     }
@@ -56,11 +52,6 @@ const Game = () => {
     );
     setRival(rival2);
   };
-
-  // const handleAuto = () => {
-  //   if (auto) setAuto(false);
-  //   if (!auto) setAuto(true);
-  // };
 
   useEffect(() => {
     setJugador(nuevoCarton());
@@ -78,6 +69,13 @@ const Game = () => {
   };
 
   useEffect(() => {
+    if (con===74){
+      toast("Hubo un empate")
+      setEmpate(true)
+      setTimeout(()=>{
+        setGameOver(true)
+      },5000)
+    }
     if (con === 75) setGameOver(true);
     if(con>0){
       for(let i=0;i<rival.length;i++){
@@ -85,7 +83,11 @@ const Game = () => {
           return
         }
       }
-      setGameOver(true)
+      toast("Has perdido")
+      setWinRival(true)
+      setTimeout(()=>{
+        setGameOver(true)
+      },5000)
     }
   }, [con]);
 
@@ -117,7 +119,8 @@ const Game = () => {
           <p>
             {win
               ? "Felicitaciones has ganado la partida"
-              : "Lo siento, has perdido"}
+              : empate ? "Hubo empate, no te quedes así ve por la revancha":"Lo siento, has perdido"}
+              
           </p>
           {win && (
             <div>
@@ -155,12 +158,21 @@ const Game = () => {
             );
           })}
         </div>
-
+        
         <button onClick={handleBalota}>Nueva Balota</button>
         {/* <SwitchToogle handleSwitch={handleAuto} able={con>0 ? true: false}/>
         <span>Automático</span> */}
       </div>
-
+        <Toaster
+        toastOptions={{
+          classname:'toast',
+          style: {
+            border: '1px solid #ff3c00',
+            padding: '32px',
+            color: '#ff3c00',
+          },
+        }}
+        />
       <div className="newBalota-container">
         <h2>Última Balota</h2>
         <div className="newBalota-idlet">
