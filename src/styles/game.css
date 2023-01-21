@@ -155,8 +155,8 @@
 }
 
 .bingo-win {
-  writing-mode: vertical-rl;
-  text-orientation: upright;
+  /* writing-mode: vertical-rl;
+  text-orientation: upright; */
   border: none;
   margin: 0 5%;
   padding: 10px;
@@ -170,8 +170,7 @@
   height: fit-content;
   transition: all 0.3 ease;
   position: absolute;
-  top: 0px;
-  left: -80px;
+  bottom: -100px;
 }
 
 .bingo-win:hover {
@@ -310,8 +309,8 @@
     position: absolute;
     top: 5px;
     left: 5px;
-    width: 55px;
-    height: 55px;
+    width: 40px;
+    height: 40px;
     line-height: 40px;
     border-radius: 50%;
     background: #000;
@@ -323,12 +322,12 @@
     from {
       width: 0px;
       height: 0px;
-      top: 32.5px;
-      left: 32.5px;
+      top: 25px;
+      left: 25px;
     }
     to {
-      width: 55px;
-      height: 55px;
+      width: 40px;
+      height: 40px;
       top: 5px;
       left: 5px;
     }
