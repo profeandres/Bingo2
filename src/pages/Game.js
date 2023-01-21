@@ -82,7 +82,6 @@ const Game = () => {
     if(con>0){
       for(let i=0;i<rival.length;i++){
         if(!db.balotas[rival[i].id-1].out){
-          console.log(`salió el ${bal.id} y ${rival[i].id}`)
           return
         }
       }

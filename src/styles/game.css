@@ -106,6 +106,7 @@
   font-family: "Rowdies", cursive;
   margin: 10px 0;
   transition: all 0.3 ease;
+  max-height: 50px;
 }
 
 .game-container > button:hover {
@@ -127,6 +128,7 @@
   height: fit-content;
   color: black;
   padding: 20px 0;
+  margin: 0 5px;
 }
 
 .newBalota-container > h2 {
@@ -185,7 +187,7 @@
 
 .bingo-cartones {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   color: white;
   margin: 0 auto;
   width: 70rem;
@@ -195,7 +197,7 @@
 }
 
 .carton {
-  margin: 5% 0;
+  margin: 5px 0;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -284,8 +286,8 @@
     align-items: center;
   }
 
-  .carton{
-    margin: 30px;
+  .carton {
+    margin: 0 30px ;
   }
   .carton-title {
     font-size: 20px;
@@ -340,5 +342,63 @@
     width: 30px;
     line-height: 30px;
     font-size: 15px;
+  }
+}
+
+@media screen and (max-height: 730px) {
+  .game-container {
+    width: 500px;
+  }
+
+  .bingo-ui-gm-balotas {
+    width: 100%;
+  }
+}
+
+@media screen and (max-height:570px) {
+  .bingo-win{
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    border: none;
+    margin: 0 5%;
+    padding: 10px;
+    background: white;
+    color: black;
+    box-shadow: 1px 1px 10px white;
+    font-size: 2rem;
+    font-weight: 300;
+    border-radius: 5px;
+    font-family: "Rowdies", cursive;
+    height: fit-content;
+    transition: all 0.3 ease;
+    position: absolute;
+    top: 0px;
+    left: -80px;
+  }
+}
+
+@media screen and (max-width: 1090px) {
+  .bingo-cartones {
+    align-content: center;
+  }
+
+  .bingo-win {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    border: none;
+    margin: 0 5%;
+    padding: 10px;
+    background: white;
+    color: black;
+    box-shadow: 1px 1px 10px white;
+    font-size: 2rem;
+    font-weight: 300;
+    border-radius: 5px;
+    font-family: "Rowdies", cursive;
+    height: fit-content;
+    transition: all 0.3 ease;
+    position: absolute;
+    top: 0px;
+    left: -80px;
   }
 }
